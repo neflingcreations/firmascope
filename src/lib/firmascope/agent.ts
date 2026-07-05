@@ -1,38 +1,10 @@
 import { allClaimCitationsResolve } from "./citations";
-import { buildFallbackBrief } from "./generator";
+import { buildFallbackBrief, findForbiddenWording } from "./generator";
 import type { BriefGenerator } from "./generator";
 import { validateNip } from "./nip";
 import type { RegistryClient } from "./registry";
 import { CompanyBriefSchema } from "./schema";
 import type { CompanyBrief, TraceEvent } from "./types";
-
-// Section 12 wording rules: enforced here in code, not just via prompt.
-export const FORBIDDEN_PHRASES = [
-  "safe company",
-  "unsafe",
-  "fraud detector",
-  "fraudulent",
-  "approved",
-  "rejected",
-  "guaranteed",
-  "definitely",
-  "you should sign",
-  "credit score",
-];
-
-export function findForbiddenWording(brief: CompanyBrief): string[] {
-  const haystack = [
-    brief.summary,
-    brief.disclaimer,
-    ...brief.registryFacts.map((fact) => fact.text),
-    ...brief.riskSignals.map((signal) => signal.text),
-    ...brief.unknowns,
-  ]
-    .join(" \n ")
-    .toLowerCase();
-
-  return FORBIDDEN_PHRASES.filter((phrase) => haystack.includes(phrase));
-}
 
 interface GuardResult {
   ok: boolean;
@@ -40,7 +12,10 @@ interface GuardResult {
 }
 
 // Section 8.5 post-validation guards, run against every brief before it
-// reaches the UI — deterministic or LLM-generated alike.
+// reaches the UI — deterministic or LLM-generated alike. FORBIDDEN_PHRASES
+// and findForbiddenWording live in generator.ts (not here) so
+// LlmBriefGenerator's own repair-retry loop can reuse them without a
+// circular import between agent.ts and generator.ts.
 export function runGuards(brief: CompanyBrief): GuardResult {
   const schemaResult = CompanyBriefSchema.safeParse(brief);
   if (!schemaResult.success) {
@@ -48,6 +23,9 @@ export function runGuards(brief: CompanyBrief): GuardResult {
   }
   if (!allClaimCitationsResolve(brief.registryFacts, brief.citations)) {
     return { ok: false, reason: "A registry fact cites an unresolved citation id." };
+  }
+  if (!allClaimCitationsResolve(brief.riskSignals, brief.citations)) {
+    return { ok: false, reason: "A risk signal cites an unresolved citation id." };
   }
   if (!brief.disclaimer.trim()) {
     return { ok: false, reason: "Brief is missing its disclaimer." };

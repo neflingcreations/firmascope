@@ -1,0 +1,61 @@
+{
+  "input": {
+    "nip": "3210049379"
+  },
+  "verdict": "insufficient_data",
+  "summary": "Available VAT whitelist data shows an active VAT status, but multiple key fields are missing, limiting the usefulness of this registry summary.",
+  "registryFacts": [
+    {
+      "text": "Registered name: PARTIAL DATA EXAMPLE SP. Z O.O..",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "text": "VAT status: Czynny.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "text": "Residence address: UL. PRZYKŁADOWA 1, 00-001 WARSZAWA.",
+      "citationIds": [
+        "c1"
+      ]
+    }
+  ],
+  "riskSignals": [
+    {
+      "level": "info",
+      "text": "Registered as an active VAT payer in the whitelist.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "level": "unknown",
+      "text": "No bank account numbers are listed in the VAT whitelist.",
+      "citationIds": [
+        "c1"
+      ]
+    }
+  ],
+  "unknowns": [
+    "REGON is not provided in the registry data.",
+    "PESEL is not provided in the registry data.",
+    "KRS is not provided in the registry data.",
+    "Working address is not provided in the registry data.",
+    "Legal registration date is not provided in the registry data."
+  ],
+  "citations": [
+    {
+      "id": "c1",
+      "toolCallId": "fixture-4984d60d-383a-4c26-9585-3c2494027144",
+      "sourceName": "VAT whitelist (fixture)",
+      "sourceType": "fixture",
+      "retrievedAt": "2026-07-05T10:03:14.235Z",
+      "rawPath": "fixtures/vat-whitelist/partial-response.json"
+    }
+  ],
+  "disclaimer": "This is a registry summary, not legal, financial, or accounting advice. Verify independently before making decisions."
+}

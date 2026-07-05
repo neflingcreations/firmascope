@@ -1,0 +1,95 @@
+{
+  "input": {
+    "nip": "9512381607"
+  },
+  "verdict": "low_risk",
+  "summary": "No immediate issue found in available VAT whitelist data for this NIP. The entity is listed as an active VAT payer.",
+  "registryFacts": [
+    {
+      "text": "Registered name: BOOKSY INTERNATIONAL SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "text": "VAT status: Czynny.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "text": "REGON: 147315920.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "text": "KRS: 0000515914.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "text": "Working address: PROSTA 67, 00-838 WARSZAWA.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "text": "Legal registration date: 2014-07-31.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "text": "1 bank account number(s) on record in the VAT whitelist.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "text": "Entity has virtual accounts listed in the VAT whitelist.",
+      "citationIds": [
+        "c1"
+      ]
+    }
+  ],
+  "riskSignals": [
+    {
+      "level": "info",
+      "text": "Registered as an active VAT payer in the whitelist.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "level": "info",
+      "text": "No removal, denial, or restoration dates present in the registry data.",
+      "citationIds": [
+        "c1"
+      ]
+    }
+  ],
+  "unknowns": [
+    "PESEL is not specified in the registry data.",
+    "Residence address is not specified in the registry data.",
+    "Representatives are not listed in the registry data.",
+    "Authorized clerks are not listed in the registry data.",
+    "Partners are not listed in the registry data.",
+    "Registration denial basis is not specified.",
+    "Restoration basis is not specified.",
+    "Removal basis is not specified.",
+    "SME exemption date is not specified."
+  ],
+  "citations": [
+    {
+      "id": "c1",
+      "toolCallId": "fixture-116486ca-9531-4ef7-83d0-4520ec61f2ea",
+      "sourceName": "VAT whitelist (fixture)",
+      "sourceType": "fixture",
+      "retrievedAt": "2026-07-05T10:03:05.344Z",
+      "rawPath": "fixtures/vat-whitelist/known-active-company.json"
+    }
+  ],
+  "disclaimer": "This registry summary is limited to available registry data and is provided by a due-diligence assistant. It does not constitute legal, financial, or accounting advice."
+}
