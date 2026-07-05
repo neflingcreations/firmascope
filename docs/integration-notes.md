@@ -14,20 +14,26 @@ console script `polish-business-mcp`.
 
 The server runs via `mcp.run()` (stdio transport). There is no HTTP/SSE mode.
 
-**Consequence:** live MCP access works when the Next.js process can spawn/talk
-to the PBI-MCP process locally (e.g. `next dev`, or a Vercel deployment with a
-long-running Node server) but **not on Vercel's default serverless functions**,
-which cannot hold a persistent stdio subprocess across requests reliably. The
+**Consequence:** live MCP access requires the Next.js process to spawn/talk to
+the PBI-MCP process locally as a persistent stdio subprocess — it does not work
+on classic serverless functions (e.g. AWS Lambda-style FaaS), which can't hold
+that subprocess open across requests. The v0.1 deploy target is **Dokploy**
+(self-hosted, Docker-container based — a long-running Node server, not
+serverless functions), so the stdio constraint is not a hard blocker there the
+way it would be on a serverless platform. **Still out of scope for v0.1** per
+the locked Phase 0 decision below — wiring `McpRegistryClient` for real is a
+roadmap item, not something this deploy-target change unlocks by itself. The
 deployed demo therefore runs in `fixture` + `recorded` mode; live MCP mode is
-local-only. This is documented again in `docs/limitations.md` (Phase 11) and is
-a known constraint, not a bug.
+local-only for now. This is documented again in `docs/limitations.md`
+(Phase 11) and is a scope decision, not a bug.
 
 **Running live locally:** `uv run polish-business-mcp` with
 `cwd = C:\Users\nefli\Desktop\Developer\pbi-mcp` (requires Python + uv). The
 Next.js side needs a **stdio** MCP client (`@modelcontextprotocol/sdk`'s
 `StdioClientTransport`, or the Vercel AI SDK's `experimental_createMCPClient`
 pointed at a stdio transport) — this repo does not use the AI SDK's built-in
-HTTP/SSE MCP transport since PBI-MCP doesn't expose one.
+HTTP/SSE MCP transport since PBI-MCP doesn't expose one. ("Vercel AI SDK" here
+names the `ai` npm package, not the hosting platform.)
 
 ## Tools that exist (7 total)
 

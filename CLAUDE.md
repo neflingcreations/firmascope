@@ -26,7 +26,7 @@ Each phase: implement → `npm run test` green → commit with the message below
 7. `POST /api/analyze-company` — `feat: add company analysis API route`
 8. UI — `feat: build FirmaScope demo UI`
 9. Eval harness — `feat: add eval harness with golden cases`
-10. CI + Vercel deploy — `ci: add GitHub Actions pipeline`
+10. CI + Dokploy deploy — `ci: add GitHub Actions pipeline`
 11. Docs + final verification — `docs: architecture, evals, limitations, demo script`
 
 ## Scripts
