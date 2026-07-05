@@ -1,28 +1,15 @@
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { createOpenRouter } from "@openrouter/ai-sdk-provider";
+import { loadEnvLocal } from "../src/lib/env-local";
 import { createOpenRouterObjectGenerator, LlmBriefGenerator } from "../src/lib/firmascope/generator";
 import { FixtureRegistryClient } from "../src/lib/firmascope/registry";
 import { CompanyBriefSchema } from "../src/lib/firmascope/schema";
 
-function loadEnvLocal(): void {
-  const envPath = path.join(process.cwd(), ".env.local");
-  if (!existsSync(envPath)) return;
-  for (const line of readFileSync(envPath, "utf-8").split("\n")) {
-    const trimmed = line.trim();
-    if (!trimmed || trimmed.startsWith("#")) continue;
-    const eq = trimmed.indexOf("=");
-    if (eq === -1) continue;
-    const key = trimmed.slice(0, eq).trim();
-    const value = trimmed.slice(eq + 1).trim();
-    if (key && !(key in process.env)) process.env[key] = value;
-  }
-}
-
-// The two "found"-status demo NIPs (see fixtures/vat-whitelist/). not_found
+// The "found"-status demo/golden NIPs (see fixtures/vat-whitelist/). not_found
 // and malformed lookups never reach the LLM (LlmBriefGenerator delegates
 // those to DeterministicBriefGenerator), so there's nothing to record for them.
-const GOLDEN_NIPS = ["9512381607", "3210049379"];
+const GOLDEN_NIPS = ["9512381607", "3210049379", "6555208280", "3005590982", "5631410744"];
 
 async function main() {
   loadEnvLocal();
@@ -42,7 +29,11 @@ async function main() {
   const runsDir = path.join(process.cwd(), "fixtures", "runs");
   mkdirSync(runsDir, { recursive: true });
 
-  for (const nip of GOLDEN_NIPS) {
+  // Pass NIPs as CLI args to re-record a subset (e.g. after adding one new
+  // golden fixture) without re-spending API calls on the whole set.
+  const nips = process.argv.slice(2).length > 0 ? process.argv.slice(2) : GOLDEN_NIPS;
+
+  for (const nip of nips) {
     console.log(`Recording live run for NIP ${nip} via ${model}...`);
     const lookup = await registryClient.lookupVatByNip(nip);
     if (lookup.status !== "found") {

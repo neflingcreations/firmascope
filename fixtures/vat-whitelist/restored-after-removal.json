@@ -1,0 +1,23 @@
+{
+  "name": "MAREK ZIELIŃSKI USŁUGI REMONTOWE",
+  "nip": "5631410744",
+  "statusVat": "Czynny",
+  "regon": "241567890",
+  "pesel": null,
+  "krs": null,
+  "residenceAddress": "UL. LEŚNA 5, 61-002 POZNAŃ",
+  "workingAddress": null,
+  "representatives": [],
+  "authorizedClerks": [],
+  "partners": [],
+  "registrationLegalDate": "2018-02-10",
+  "registrationDenialBasis": null,
+  "registrationDenialDate": null,
+  "restorationBasis": "Restored following resolution of a prior VAT registration issue.",
+  "restorationDate": "2023-01-15",
+  "removalBasis": "Failure to file required VAT declarations for three consecutive periods.",
+  "removalDate": "2022-11-02",
+  "exemptionSmeDate": null,
+  "accountNumbers": ["94109024020000000123456789"],
+  "hasVirtualAccounts": false
+}

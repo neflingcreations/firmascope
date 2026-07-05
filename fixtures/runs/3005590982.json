@@ -1,0 +1,85 @@
+{
+  "input": {
+    "nip": "3005590982"
+  },
+  "verdict": "low_risk",
+  "summary": "No immediate issue found in available VAT whitelist data for this sole trader. The entity is listed as an active VAT payer with one bank account on record.",
+  "registryFacts": [
+    {
+      "text": "Registered name: JAN NOWAK USŁUGI INFORMATYCZNE.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "text": "VAT status: Czynny (active VAT payer).",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "text": "REGON: 180234567.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "text": "Residence address: UL. KWIATOWA 12, 30-002 KRAKÓW.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "text": "Legal registration date: 2019-09-01.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "text": "1 bank account number(s) on record in the VAT whitelist: 61109010480000000123456789.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "text": "No virtual accounts on record.",
+      "citationIds": [
+        "c1"
+      ]
+    }
+  ],
+  "riskSignals": [
+    {
+      "level": "info",
+      "text": "Registered as an active VAT payer in the whitelist with no removal, denial, or restoration dates.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "level": "info",
+      "text": "Single bank account on record, which is typical for a sole trader.",
+      "citationIds": [
+        "c1"
+      ]
+    }
+  ],
+  "unknowns": [
+    "No working address on record; only the residence address is provided.",
+    "No KRS number on record, which is expected for a sole trader but may limit additional due-diligence cross-checks.",
+    "No PESEL on record.",
+    "No representatives, authorized clerks, or partners listed, so entity structure beyond the sole-trader name cannot be confirmed from this registry.",
+    "No SME exemption date on record.",
+    "No removal basis or date on record, and no restoration basis or date on record."
+  ],
+  "citations": [
+    {
+      "id": "c1",
+      "toolCallId": "fixture-48742c25-5067-4e83-bcbd-8c69ba8e3f2c",
+      "sourceName": "VAT whitelist (fixture)",
+      "sourceType": "fixture",
+      "retrievedAt": "2026-07-05T10:39:03.917Z"
+    }
+  ],
+  "disclaimer": "This is a registry summary limited to available registry data, not legal, financial, or accounting advice. Verify independently before making decisions."
+}

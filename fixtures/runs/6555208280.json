@@ -1,0 +1,113 @@
+{
+  "input": {
+    "nip": "6555208280"
+  },
+  "verdict": "low_risk",
+  "summary": "No immediate issue found in available VAT whitelist data for this NIP. The entity is an active VAT payer with no removal or denial dates on record, though some registry fields are not provided.",
+  "registryFacts": [
+    {
+      "text": "Registered name: TECHNOKRATA SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "text": "VAT status: Czynny (active VAT payer).",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "text": "REGON: 365789412.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "text": "KRS: 0000612345.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "text": "Working address: UL. GRZYBOWSKA 87, 00-844 WARSZAWA.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "text": "Legal registration date: 2016-03-14.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "text": "Representative on record: Anna Kowalska, function: PREZES ZARZĄDU.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "text": "1 bank account number on record in the VAT whitelist: 49102010260000860201234567.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "text": "No removal date, registration denial date, or restoration date present in the registry data.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "text": "hasVirtualAccounts is false.",
+      "citationIds": [
+        "c1"
+      ]
+    }
+  ],
+  "riskSignals": [
+    {
+      "level": "info",
+      "text": "Registered as an active VAT payer in the whitelist with no removal or denial dates on record.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "level": "info",
+      "text": "Company has been registered since 2016-03-14, indicating a multi-year operational history in the registry.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "level": "info",
+      "text": "Only one bank account number is listed in the VAT whitelist.",
+      "citationIds": [
+        "c1"
+      ]
+    }
+  ],
+  "unknowns": [
+    "PESEL is not provided in the registry data (null).",
+    "Residence address is not provided in the registry data (null).",
+    "Exemption SME date is not provided in the registry data (null).",
+    "No authorized clerks are listed in the registry data (empty array).",
+    "No partners are listed in the registry data (empty array).",
+    "Registration denial basis is not provided in the registry data (null).",
+    "Restoration basis is not provided in the registry data (null).",
+    "Removal basis is not provided in the registry data (null)."
+  ],
+  "citations": [
+    {
+      "id": "c1",
+      "toolCallId": "fixture-57c47eed-c6ae-447f-9744-4c172aa6fd63",
+      "sourceName": "VAT whitelist (fixture)",
+      "sourceType": "fixture",
+      "retrievedAt": "2026-07-05T10:38:38.864Z",
+      "rawPath": "fixtures/vat-whitelist/active-limited-company.json"
+    }
+  ],
+  "disclaimer": "This is a registry summary produced by a due-diligence assistant limited to available registry data. It is not legal, financial, or accounting advice. Verify independently before making decisions."
+}

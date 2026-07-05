@@ -1,0 +1,104 @@
+{
+  "input": {
+    "nip": "5631410744"
+  },
+  "verdict": "needs_manual_review",
+  "summary": "The entity is currently an active VAT payer but has a history of removal from the VAT whitelist in late 2022 followed by restoration in early 2023. Manual review recommended.",
+  "registryFacts": [
+    {
+      "text": "Registered name: MAREK ZIELIŃSKI USŁUGI REMONTOWE.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "text": "VAT status: Czynny.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "text": "REGON: 241567890.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "text": "Residence address: UL. LEŚNA 5, 61-002 POZNAŃ.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "text": "Legal registration date: 2018-02-10.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "text": "Removal date: 2022-11-02. Removal basis: Failure to file required VAT declarations for three consecutive periods.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "text": "Restoration date: 2023-01-15. Restoration basis: Restored following resolution of a prior VAT registration issue.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "text": "1 bank account number(s) on record in the VAT whitelist.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "text": "Virtual accounts: none on record.",
+      "citationIds": [
+        "c1"
+      ]
+    }
+  ],
+  "riskSignals": [
+    {
+      "level": "warning",
+      "text": "Entity was removed from the VAT whitelist on 2022-11-02 due to failure to file required VAT declarations for three consecutive periods.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "level": "info",
+      "text": "Entity was restored to the VAT whitelist on 2023-01-15 and is currently registered as Czynny.",
+      "citationIds": [
+        "c1"
+      ]
+    },
+    {
+      "level": "warning",
+      "text": "The gap between removal and restoration is approximately 2.5 months, indicating a recent compliance issue.",
+      "citationIds": [
+        "c1"
+      ]
+    }
+  ],
+  "unknowns": [
+    "Working address is not provided in the registry data.",
+    "PESEL is not provided in the registry data.",
+    "KRS is not provided in the registry data.",
+    "No representatives, authorized clerks, or partners are listed in the registry data.",
+    "Exemption SME date is not provided in the registry data."
+  ],
+  "citations": [
+    {
+      "id": "c1",
+      "toolCallId": "fixture-e6a90dff-b83b-448f-b1f0-3ac9c858d5a5",
+      "sourceName": "VAT whitelist (fixture)",
+      "sourceType": "fixture",
+      "retrievedAt": "2026-07-05T10:53:28.243Z",
+      "rawPath": "fixtures/vat-whitelist/restored-after-removal.json"
+    }
+  ],
+  "disclaimer": "This is a registry summary from a due-diligence assistant, not legal, financial, or accounting advice. The information is limited to available registry data and should be verified independently before making decisions."
+}

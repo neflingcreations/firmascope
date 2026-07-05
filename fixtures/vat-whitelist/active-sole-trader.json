@@ -1,0 +1,23 @@
+{
+  "name": "JAN NOWAK USŁUGI INFORMATYCZNE",
+  "nip": "3005590982",
+  "statusVat": "Czynny",
+  "regon": "180234567",
+  "pesel": null,
+  "krs": null,
+  "residenceAddress": "UL. KWIATOWA 12, 30-002 KRAKÓW",
+  "workingAddress": null,
+  "representatives": [],
+  "authorizedClerks": [],
+  "partners": [],
+  "registrationLegalDate": "2019-09-01",
+  "registrationDenialBasis": null,
+  "registrationDenialDate": null,
+  "restorationBasis": null,
+  "restorationDate": null,
+  "removalBasis": null,
+  "removalDate": null,
+  "exemptionSmeDate": null,
+  "accountNumbers": ["61109010480000000123456789"],
+  "hasVirtualAccounts": false
+}

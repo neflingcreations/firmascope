@@ -13,6 +13,9 @@ const FIXTURE_BY_NIP: Record<string, string> = {
   "9512381607": "known-active-company.json",
   "3210049379": "partial-response.json",
   "5252344078": "malformed-response.json",
+  "6555208280": "active-limited-company.json",
+  "3005590982": "active-sole-trader.json",
+  "5631410744": "restored-after-removal.json",
 };
 
 const UNKNOWN_FIXTURE = "unknown-nip.json";

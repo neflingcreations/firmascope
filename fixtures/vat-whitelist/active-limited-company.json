@@ -1,0 +1,23 @@
+{
+  "name": "TECHNOKRATA SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ",
+  "nip": "6555208280",
+  "statusVat": "Czynny",
+  "regon": "365789412",
+  "pesel": null,
+  "krs": "0000612345",
+  "residenceAddress": null,
+  "workingAddress": "UL. GRZYBOWSKA 87, 00-844 WARSZAWA",
+  "representatives": [{ "name": "Anna Kowalska", "function": "PREZES ZARZĄDU" }],
+  "authorizedClerks": [],
+  "partners": [],
+  "registrationLegalDate": "2016-03-14",
+  "registrationDenialBasis": null,
+  "registrationDenialDate": null,
+  "restorationBasis": null,
+  "restorationDate": null,
+  "removalBasis": null,
+  "removalDate": null,
+  "exemptionSmeDate": null,
+  "accountNumbers": ["49102010260000860201234567"],
+  "hasVirtualAccounts": false
+}
