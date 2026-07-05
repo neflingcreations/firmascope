@@ -1,26 +1,168 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --paper: #f4efe1;
+  --paper-raised: #ece4d0;
+  --paper-line: #dcd2b8;
+  --ink: #1c1f2b;
+  --ink-soft: #4a4f63;
+  --ink-faint: #8a8a7c;
+  --oxblood: #8a2b28;
+  --oxblood-soft: #b95a4f;
+  --forest: #2f5233;
+  --forest-soft: #5c8a5f;
+  --gold: #a9822c;
+  --charcoal: #55524a;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-paper: var(--paper);
+  --color-paper-raised: var(--paper-raised);
+  --color-paper-line: var(--paper-line);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+  --color-oxblood: var(--oxblood);
+  --color-oxblood-soft: var(--oxblood-soft);
+  --color-forest: var(--forest);
+  --color-forest-soft: var(--forest-soft);
+  --color-gold: var(--gold);
+  --color-charcoal: var(--charcoal);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --paper: #14151c;
+    --paper-raised: #1b1d27;
+    --paper-line: #2c2e3d;
+    --ink: #ece6d6;
+    --ink-soft: #b7b2a0;
+    --ink-faint: #6b6a63;
+    --oxblood: #c96b60;
+    --oxblood-soft: #a24942;
+    --forest: #6fae76;
+    --forest-soft: #4d7d52;
+    --gold: #d9b158;
+    --charcoal: #a29c8c;
   }
 }
 
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-raised: var(--paper-raised);
+  --color-paper-line: var(--paper-line);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+  --color-oxblood: var(--oxblood);
+  --color-oxblood-soft: var(--oxblood-soft);
+  --color-forest: var(--forest);
+  --color-forest-soft: var(--forest-soft);
+  --color-gold: var(--gold);
+  --color-charcoal: var(--charcoal);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body), Georgia, serif;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 15% -10%, rgba(138, 43, 40, 0.05), transparent),
+    radial-gradient(ellipse 60% 50% at 100% 0%, rgba(47, 82, 51, 0.04), transparent);
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (prefers-color-scheme: dark) {
+  body::before {
+    opacity: 0.5;
+    mix-blend-mode: screen;
+  }
+}
+
+.rule-line {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 27px,
+    var(--paper-line) 27px,
+    var(--paper-line) 28px
+  );
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-rise-in {
+  animation: rise-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes stamp-in {
+  0% {
+    opacity: 0;
+    transform: scale(2.2) rotate(-14deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(0.94) rotate(-7deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(-6deg);
+  }
+}
+
+.animate-stamp-in {
+  animation: stamp-in 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.1) both;
+}
+
+@keyframes scan-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-scan-pulse {
+  animation: scan-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes caret-blink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  50%,
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-caret-blink {
+  animation: caret-blink 1s step-end infinite;
 }
