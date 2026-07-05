@@ -1,0 +1,4 @@
+{
+  "unexpectedField": "this does not match the RegistrySubject or error envelope shape",
+  "randomNumber": 42
+}

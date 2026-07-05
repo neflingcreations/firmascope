@@ -1,0 +1,23 @@
+{
+  "name": "BOOKSY INTERNATIONAL SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ",
+  "nip": "9512381607",
+  "statusVat": "Czynny",
+  "regon": "147315920",
+  "pesel": null,
+  "krs": "0000515914",
+  "residenceAddress": null,
+  "workingAddress": "PROSTA 67, 00-838 WARSZAWA",
+  "representatives": [],
+  "authorizedClerks": [],
+  "partners": [],
+  "registrationLegalDate": "2014-07-31",
+  "registrationDenialBasis": null,
+  "registrationDenialDate": null,
+  "restorationBasis": null,
+  "restorationDate": null,
+  "removalBasis": null,
+  "removalDate": null,
+  "exemptionSmeDate": null,
+  "accountNumbers": ["82249000050000460038099095"],
+  "hasVirtualAccounts": true
+}

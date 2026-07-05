@@ -1,0 +1,23 @@
+{
+  "name": "PARTIAL DATA EXAMPLE SP. Z O.O.",
+  "nip": "3210049379",
+  "statusVat": "Czynny",
+  "regon": null,
+  "pesel": null,
+  "krs": null,
+  "residenceAddress": "UL. PRZYKŁADOWA 1, 00-001 WARSZAWA",
+  "workingAddress": null,
+  "representatives": [],
+  "authorizedClerks": [],
+  "partners": [],
+  "registrationLegalDate": null,
+  "registrationDenialBasis": null,
+  "registrationDenialDate": null,
+  "restorationBasis": null,
+  "restorationDate": null,
+  "removalBasis": null,
+  "removalDate": null,
+  "exemptionSmeDate": null,
+  "accountNumbers": [],
+  "hasVirtualAccounts": false
+}

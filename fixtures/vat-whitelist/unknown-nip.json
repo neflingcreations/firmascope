@@ -1,0 +1,5 @@
+{
+  "error": "not_found",
+  "message": "No VAT whitelist entry found for this NIP.",
+  "nip": "5260250274"
+}
